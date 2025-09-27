@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://46qvd17c3rac"]
+
+[ext_resource type="Script" uid="uid://dkq5dt7avd1s0" path="res://firebase_test.gd" id="1_qr3ew"]
+
+[node name="FirebaseTest" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qr3ew")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "test http request to firebase "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 125.0
+offset_top = 157.0
+offset_right = 535.0
+offset_bottom = 436.0
+grow_horizontal = 2
+theme_override_constants/separation = 37
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "NImi:"
+
+[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/NameLabel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 72.0
+offset_top = -3.0
+offset_right = 406.0
+offset_bottom = 28.0
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pisteet:"
+
+[node name="ScoreLineEdit" type="LineEdit" parent="VBoxContainer/ScoreLabel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 72.0
+offset_top = -3.0
+offset_right = 403.0
+offset_bottom = 28.0
+
+[node name="SaveButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Tallenna tietokantaan"
+
+[node name="LogoutButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Log out"
+
+[node name="TextLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Top10Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 640.0
+offset_top = 66.0
+offset_right = 1002.0
+offset_bottom = 89.0
+text = "TOP 10:"
+
+[node name="Top10Container" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = 640.0
+offset_top = 123.0
+offset_right = 1002.0
+offset_bottom = 592.0
+grow_horizontal = 2
+
+[connection signal="button_down" from="VBoxContainer/SaveButton" to="." method="_on_save_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/LogoutButton" to="." method="_on_logout_button_button_down"]
